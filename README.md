@@ -99,6 +99,13 @@ npm run dev
 App runs on:
 http://localhost:5173
 
+#### default login credentials
+
+```bash
+username: solstice@example.com
+password: Password@123
+```
+
 ## 🔌 API Details
 
 ### 1. Upload File
