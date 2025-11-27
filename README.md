@@ -85,7 +85,7 @@ Create a .env file in the root:
 ```bash
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_anon_key
-VITE_BUCKET_NAME=uploads
+VITE_BUCKET_NAME=documents //default
 ```
 
 ## ▶️ Running the Project
