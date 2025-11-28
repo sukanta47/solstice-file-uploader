@@ -48,7 +48,7 @@ export const useUploadQueue = () => {
         if (err.name === "AbortError") {
           setTasks((list) =>
             list.map((t) =>
-              t.id === task.id ? { ...t, status: "cancelled" } : t
+              t.id === task.id ? { ...t, status: "cancelled", progress: 0 } : t
             )
           );
         } else {
@@ -107,7 +107,7 @@ export const useUploadQueue = () => {
         if (t.id === taskId && t.controller) {
           t.controller.abort();
         }
-        return t.id === taskId ? { ...t, status: "cancelled" } : t;
+        return t.id === taskId ? { ...t, status: "cancelled", progress: 0 } : t;
       })
     );
   };

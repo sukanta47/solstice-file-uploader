@@ -3,6 +3,7 @@ import AppLayout from "../components/Layout/AppLayout";
 import LoginPage from "../modules/auth/pages/LoginPage";
 import UploadDashboard from "../modules/upload/pages/UploadDashboard";
 import ProtectedRoute from "./ProtectedRoute";
+import ErrorPage from "../components/ui/ErrorPage";
 
 export const appRoutes = [
   {
@@ -12,6 +13,7 @@ export const appRoutes = [
       {
         path: "",
         element: <AppLayout />,
+        errorElement: <ErrorPage />,
         children: [
           {
             index: true,
@@ -20,6 +22,11 @@ export const appRoutes = [
           {
             path: "dashboard",
             element: <UploadDashboard />,
+            errorElement: <ErrorPage />,
+          },
+          {
+            path: "*",
+            element: <ErrorPage />,
           },
         ],
       },

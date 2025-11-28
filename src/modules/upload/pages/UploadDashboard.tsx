@@ -17,7 +17,7 @@ const UploadDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-200 rounded-xl">
-      <div className="flex flex-col gap-4 max-w-6xl mx-auto p-6 items-center">
+      <div className="flex flex-col gap-4 mx-auto p-6 items-center">
         <MyFilesGrid />
         <div className="grid w-3/4 items-center gap-6 mt-10">
           <div className="lgcol-span-2">
@@ -29,7 +29,10 @@ const UploadDashboard = () => {
           <div className="min-w-64 max-w-96 fixed right-4 bottom-0">
             <div className="flex items-center justify-between relative bg-white px-4 py-2 rounded-t-2xl border border-gray-300">
               <div className="flex items-center gap-2">
-                <p className="font-medium text-gray-900 text-sm">
+                <p
+                  data-testid="title"
+                  className="font-medium text-gray-900 text-sm"
+                >
                   File Uploads
                 </p>
               </div>

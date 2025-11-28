@@ -10,7 +10,7 @@ const FileDropzone = ({ onFiles, setShowUploadList }: FileDropzoneProps) => {
   const openFileDialog = () => fileInputRef.current?.click();
 
   const validateFiles = (files: File[]) => {
-    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+    const MAX_FILE_SIZE = 1 * 1024 * 1024;
     const AllowedFileTypes = [
       "application/pdf",
       "application/msword",
@@ -25,14 +25,13 @@ const FileDropzone = ({ onFiles, setShowUploadList }: FileDropzoneProps) => {
         "Your files have unsupported formats. Please upload PDF, DOCX, or TXT files only."
       );
       return [];
-    } else {
-      const oversizedFiles = files.filter((file) => file.size > MAX_FILE_SIZE);
-      if (oversizedFiles.length > 0) {
-        alert(
-          "Your files exceed the maximum size of 10MB. Please upload smaller files."
-        );
-        return [];
-      }
+    }
+    const oversizedFiles = files.filter((file) => file.size > MAX_FILE_SIZE);
+    if (oversizedFiles.length > 0) {
+      alert(
+        "Your files exceed the maximum size of 10MB. Please upload smaller files."
+      );
+      return [];
     }
     return files;
   };
