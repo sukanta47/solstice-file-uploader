@@ -10,7 +10,7 @@ const FileDropzone = ({ onFiles, setShowUploadList }: FileDropzoneProps) => {
   const openFileDialog = () => fileInputRef.current?.click();
 
   const validateFiles = (files: File[]) => {
-    const MAX_FILE_SIZE = 1 * 1024 * 1024;
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
     const AllowedFileTypes = [
       "application/pdf",
       "application/msword",

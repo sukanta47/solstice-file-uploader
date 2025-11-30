@@ -38,7 +38,6 @@ export const LoginForm: React.FC = () => {
         const response = await signinUser(values.email, values.password);
 
         const { user, session, error } = response;
-        console.log({ response, user, session, error });
         if (user) {
           setIsLoading(false);
           setIsAuthenticated(true);
@@ -142,6 +141,7 @@ export const LoginForm: React.FC = () => {
 
         <button
           type="submit"
+          name="login-submit"
           disabled={isLoading}
           className="w-full bg-gray-400 text-white py-2 mt-2 mb-2 lg:mt-4 2xl:py-2.5 text-xs 2xl:text-base px-4 rounded-lg font-semibold hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
